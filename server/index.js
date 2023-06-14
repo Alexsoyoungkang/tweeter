@@ -9,6 +9,9 @@ const app           = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+//The express.static middleware is added to serve static files from the "public" directory.
+//This means that any file in the "public" directory can be accessed directly by its URL.
+
 
 // The in-memory database of tweets. It's a basic object with an array in it.
 const db = require("./lib/in-memory-db");
