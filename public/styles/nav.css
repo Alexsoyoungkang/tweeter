@@ -8,21 +8,23 @@ nav {
   align-items: center;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  padding-top: 1.3em;
+  position: fixed;
 }
 
 #title {
   font-family: 'Bungee', sans-serif;
   font-size: 45px;
+  padding-top: 0.8em;
 }
 
 #navtext {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 1.3em;
 }
 
 
 .fa-solid, .fa-angles-down {
-  color: red;
+  color: #d87f20;
 }
