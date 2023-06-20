@@ -1,0 +1,30 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tweet-text {
+  border: none;
+  border-bottom: 5px solid #545149;
+  width: 90vw;
+  height: 10px;
+  background-color: #f4f1ec;
+}
+
+#tweet-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+#submit-button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  font-family: 'Bungee', sans-serif;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
