@@ -14,3 +14,8 @@ header {
 #user-name {
   margin-top: -20px;
 }
+
+#donut {
+  width: 300px;
+  border-radius: 10%;
+}
