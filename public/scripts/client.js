@@ -72,4 +72,23 @@ $(document).ready(function() {
   };
   
   renderTweets(data);
+
+  // Event listener for form submit
+  $('form').on('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+    const data = $(this).serialize(); // Serialize form data
+    console.log("data:", data);
+
+    $.ajax({
+      type: 'POST',
+      data: data,
+      url: "http://localhost:8080/tweets",
+      success: function(res) { // method
+        console.log(res);
+      },
+      error: function(error) {
+        console.log(error);
+      }
+    });
+  });
 });
