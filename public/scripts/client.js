@@ -8,6 +8,12 @@
 // waits for the document to be fully loaded and ready before executing any JavaScript.
 // The data from the tweetObj is dynamically inserted into the appropriate places using ${} notation.
 $(document).ready(function() {
+  const escape = function(str) { // Escape function to prevent XSS attacks
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweetObj) { // tweetObj as input, representing a single tweet
     const $tweet = $(`
       <article class="tweet">
@@ -19,7 +25,7 @@ $(document).ready(function() {
           <span>${tweetObj.user.handle}</span>
         </header>
         <div class="tweet-text">
-          <p>${tweetObj.content.text}</p>
+          <p>${escape(tweetObj.content.text)}</p>
         </div>
         <footer>
           <span>${timeago.format(tweetObj.created_at)}</span>
@@ -73,7 +79,6 @@ $(document).ready(function() {
       url: "http://localhost:8080/tweets", // the server endpoint where the data should be sent
       success: function() { // method -  callback functions to handle the response from the server.
         loadTweets(); // displays tweets without having to refresh the page
-        console.log("Tweet sent to the server successfully");
       },
       error: function(error) {
         console.log(error);
