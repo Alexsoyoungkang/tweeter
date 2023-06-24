@@ -56,7 +56,16 @@ $(document).ready(function() {
   $('form').on('submit', function(event) {
     event.preventDefault(); // Prevent default form submission behavior
     const data = $(this).serialize(); // Serialize form data
-    console.log("data:", data);
+    const tweetText = $('#tweet-text').val(); // get the value of the tweet textarea
+
+    if (tweetText === "" || tweetText.trim() === "") { // validate form submission if it's met the requirements
+      alert("Tweet cannot be empty");
+      return;
+    }
+    if (tweetText.length > 140) {
+      alert("Tweet content exceeds the maximum limit of 140 characters");
+      return;
+    }
 
     $.ajax({ // sends POST request to the server using Ajax
       type: 'POST',
