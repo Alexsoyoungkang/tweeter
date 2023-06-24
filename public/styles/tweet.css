@@ -36,7 +36,7 @@
   font-size: 23px;
   font-weight: bold;
   width: 90vw;
-  height: 70px;
+  height: 90px;
   background-color: #f4f1ec;
   padding-left: 10px;
 }
@@ -62,4 +62,8 @@ footer {
   width: 8%;
   display: flex;
   justify-content: space-around;
+}
+
+.tweet .tweet-text p {
+  overflow-wrap: anywhere;
 }
