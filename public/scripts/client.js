@@ -44,7 +44,7 @@ $(document).ready(function() {
   };
   
   // Load Tweets Function //
-  const loadTweets = function() {
+  const loadTweets = function() { // responsible for fetching tweets from the server
     $.ajax("http://localhost:8080/tweets", { method: 'GET'}) // send GET request to this URL
       .then(function(tweets) { // successful response from the server. the 'tweets' parameter = response data retrived from the server aka the array of tweets
         renderTweets(tweets); // pass the tweets data to render the tweets on the page
@@ -71,8 +71,9 @@ $(document).ready(function() {
       type: 'POST',
       data: data, // serialized form data above
       url: "http://localhost:8080/tweets", // the server endpoint where the data should be sent
-      success: function(res) { // method -  callback functions to handle the response from the server.
-        console.log(res);
+      success: function() { // method -  callback functions to handle the response from the server.
+        loadTweets(); // displays tweets without having to refresh the page
+        console.log("Tweet sent to the server successfully");
       },
       error: function(error) {
         console.log(error);
