@@ -64,12 +64,14 @@ $(document).ready(function() {
     const data = $(this).serialize(); // Serialize form data
     const tweetText = $('#tweet-text').val(); // get the value of the tweet textarea
 
+    $('#error-message').slideUp(); // hides error message before validation
+
     if (tweetText === "" || tweetText.trim() === "") { // validate form submission if it's met the requirements
-      alert("Tweet cannot be empty");
+      $('#error-message').text("Tweet cannot be empty").slideDown();
       return;
     }
     if (tweetText.length > 140) {
-      alert("Tweet content exceeds the maximum limit of 140 characters");
+      $('#error-message').text("Tweet content exceeds the maximum limit of 140 characters").slideDown();
       return;
     }
 
