@@ -13,6 +13,7 @@
 
 #user-name {
   margin-top: -20px;
+  padding-top: 20px;
 }
 
 .tweet-header div {
@@ -26,6 +27,7 @@
 @media only screen and (min-width: 1024px) {
   .tweet-header {
     margin-top: 200px;
+    margin-left: 75px;
     width: 50%;
   }
 

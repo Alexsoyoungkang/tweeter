@@ -80,6 +80,7 @@ $(document).ready(function() {
       data: data, // serialized form data above
       url: "http://localhost:8080/tweets", // the server endpoint where the data should be sent
       success: function() { // method -  callback functions to handle the response from the server.
+        $('#tweet-text').val('');
         loadTweets(); // displays tweets without having to refresh the page
       },
       error: function(error) {
