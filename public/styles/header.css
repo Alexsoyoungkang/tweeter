@@ -15,7 +15,22 @@
   margin-top: -20px;
 }
 
+.tweet-header div {
+  display: flex;
+  justify-content: center;
+}
 #donut {
-  width: 300px;
+  width: 50%;
   border-radius: 10%;
+}
+@media only screen and (min-width: 1024px) {
+  .tweet-header {
+    margin-top: 200px;
+    width: 50%;
+  }
+
+  #user-name {
+    margin-top: 0;
+    padding-bottom: 70px;
+  } 
 }
