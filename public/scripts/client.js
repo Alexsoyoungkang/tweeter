@@ -43,6 +43,7 @@ $(document).ready(function() {
 
   // Render Tweets Function //
   const renderTweets = function(tweets) { // takes an array of tweet objects as input
+    $('#tweets-container').empty(); // clear the tweets container
     for (const tweet of tweets) { // loops through tweets
       const returnValue = createTweetElement(tweet); // calls createTweetElement for each tweet
       $('#tweets-container').prepend(returnValue);  // takes return value and appends it to the tweets container
@@ -81,6 +82,7 @@ $(document).ready(function() {
       url: "http://localhost:8080/tweets", // the server endpoint where the data should be sent
       success: function() { // method -  callback functions to handle the response from the server.
         $('#tweet-text').val('');
+        $('.counter').val('140');
         loadTweets(); // displays tweets without having to refresh the page
       },
       error: function(error) {

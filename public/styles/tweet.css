@@ -10,6 +10,10 @@
   color: #545149
 }
 
+article.tweet:hover {
+  box-shadow: 6px 6px #657abe;
+}
+
 .tweet header {
   width: 100%;
   background-color: #f4f1ec;

@@ -1,5 +1,5 @@
 .tweet-header {
-  height: 520px;
+  height: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
   justify-content: center;
 }
 #donut {
-  width: 50%;
+  width: 30%;
   border-radius: 10%;
 }
 @media only screen and (min-width: 1024px) {
@@ -32,7 +32,10 @@
   }
 
   #user-name {
-    margin-top: 0;
     padding-bottom: 70px;
-  } 
+  }
+
+  #donut {
+    width: 50%;
+  }
 }
